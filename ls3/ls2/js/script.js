@@ -30,25 +30,31 @@ window.onload = function () {
         /* ---------------------------------- begin [handler] ----------------------------------*/
         
         function startHandler() {
+
             var elTimerID = getID('id_timer');
+            if (interval === undefined) {
 
-            interval = setInterval(function () {
+                interval = setInterval(function () {
 
-                minutes = parseInt(count / 60, 10)
-                seconds = parseInt(count % 60, 10);
+                    minutes = parseInt(count / 60, 10)
+                    seconds = parseInt(count % 60, 10);
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                count++;
+                    count++;
 
-                elTimerID.innerHTML = minutes + ":" + seconds;
+                    elTimerID.innerHTML = minutes + ":" + seconds;
 
-            }, 1000);
+                }, 1000);
+                
+            }
+
         }
 
         function stopHandler() {
             clearInterval(interval);
+            interval = undefined;
         }
 
         function resetHandler() {
