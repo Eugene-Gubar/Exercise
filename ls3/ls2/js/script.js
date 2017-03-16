@@ -1,4 +1,7 @@
-
+/**
+ * This is a simple timer in native javascript.
+ * Author: Eugene Gubar
+ */
 
 
 window.onload = function () {
@@ -28,7 +31,10 @@ window.onload = function () {
        
 
         /* ---------------------------------- begin [handler] ----------------------------------*/
-        
+
+        /**
+         * Function startHandler - Run count in seconds and show changes.
+         */
         function startHandler() {
 
             var elTimerID = getID('id_timer');
@@ -52,11 +58,17 @@ window.onload = function () {
 
         }
 
+        /**
+         * Function stopHandler - Clear setInterval and set 'undefined'.
+         */
         function stopHandler() {
             clearInterval(interval);
             interval = undefined;
         }
 
+        /**
+         * Function resetHandler - Sets all values to zero. 
+         */
         function resetHandler() {
             count    = 0,
             minutes  = 0,
@@ -70,10 +82,18 @@ window.onload = function () {
 
         /* ------------------------------ begin [utility function] ---------------------------- */
 
+        /**
+         * Function getID - Helper function to retrieve an item by its 'ID'.
+         * @param {string} id 
+         */
         function getID(id) {
             return document.getElementById(id);
         }
 
+        /**
+         * Function getClass - Helper function to retrieve an item by its 'class'.
+         * @param {string} c 
+         */
         function getClass(c) {
             return document.getElementsByClassName(c);
         }
